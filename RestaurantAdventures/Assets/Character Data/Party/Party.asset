@@ -9,15 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a13f89d039b964419d04b179644cc3e, type: 3}
-  m_Name: Wild Pig
+  m_Script: {fileID: 11500000, guid: 48e2f1e811ae71b48980653d0644666f, type: 3}
+  m_Name: Party
   m_EditorClassIdentifier: 
-  monsterName: Wild Pig
-  sprite: {fileID: -851630847, guid: 96efa2435d000154088473fca716d673, type: 3}
-  health: 15
-  attack: 6
-  magic: 2
-  defense: 4
-  resistance: 3
-  speed: 7
-  skills: []
+  characters:
+  - {fileID: 11400000, guid: 3106a720abacf7f4d898a8706dcd4ffc, type: 2}
+  - {fileID: 11400000, guid: 7c3f027bfa4ca5f498dc2992194729d0, type: 2}

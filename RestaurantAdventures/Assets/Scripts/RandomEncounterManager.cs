@@ -19,8 +19,10 @@ public class RandomEncounterManager : MonoBehaviour
 
     public List<AreaEncounterTable> areaEncounterTables = new List<AreaEncounterTable>();
 
-    [SerializeField] int minNumberOfMonstersToEncounter = 1;
-    [SerializeField] int maxNumberOfMonstersToEncounter = 4;
+    //[SerializeField] int minNumberOfMonstersToEncounter = 1;
+    //[SerializeField] int maxNumberOfMonstersToEncounter = 4;
+
+    public PartySO playerParty;
 
     public void AddEncounterTableForArea(string areaName, List<EncounterSO> encounterTable)
     {
@@ -44,20 +46,25 @@ public class RandomEncounterManager : MonoBehaviour
     // Function to trigger an encounter in a specific area
     public void TriggerEncounterInArea(string areaName)
     {
-        foreach (var areaEncounterTable in areaEncounterTables)
+        AreaEncounterTable areaTable = areaEncounterTables.Find(x => x.areaName == areaName);
+        if (areaTable != null)
         {
-            if (areaEncounterTable.areaName == areaName)
+            List<EncounterSO> encounterTable = areaTable.encounterTable;
+            if (encounterTable.Count > 0)
             {
-                List<EncounterSO> encounterTable = areaEncounterTable.encounterTable;
-                int numberOfMonsters = UnityEngine.Random.Range(minNumberOfMonstersToEncounter, maxNumberOfMonstersToEncounter + 1);
-                List<EncounterSO> selectedMonsters = SelectRandomMonsters(encounterTable, numberOfMonsters);
-                StartBattleEncounter(selectedMonsters);
-                return;
+                int randomIndex = UnityEngine.Random.Range(0, encounterTable.Count);
+                EncounterSO selectedEncounter = encounterTable[randomIndex];
+                StartBattleEncounter(selectedEncounter, playerParty);
+            }
+            else
+            {
+                Debug.LogWarning("Encounter table is empty for area: " + areaName);
             }
         }
-
-        // If no encounter table is found for the area
-        Debug.LogWarning("Encounter table not found for area: " + areaName);
+        else
+        {
+            Debug.LogWarning("Encounter table not found for area: " + areaName);
+        }
     }
 
     // Function to select multiple random monsters from an encounter table
@@ -87,19 +94,20 @@ public class RandomEncounterManager : MonoBehaviour
     }
 
     // Function to start a battle encounter with selected monsters
-    private void StartBattleEncounter(List<EncounterSO> selectedMonsters)
+    private void StartBattleEncounter(EncounterSO selectedEncounter, PartySO playerParty)
     {
-        if (selectedMonsters.Count > 0)
+        if (selectedEncounter != null && playerParty != null)
         {
-            // Initiate battle encounter with the selected monsters
-            // This could involve loading a battle scene or initiating a battle manager
-            Debug.Log("Starting battle encounter with " + selectedMonsters.Count + " monsters.");
-            // SceneManager.LoadScene("BattleScene"); // Example: Load battle scene
-            // BattleManager.Instance.StartBattle(selectedMonsters); // Example: Start battle with selected monsters
+            Debug.Log("Starting battle encounter with: " + selectedEncounter.encounterName);
+
+            BattleData.Instance.selectedEncounter = selectedEncounter;
+            BattleData.Instance.playerParty = playerParty;
+
+            SceneManager.LoadScene("BattleScene");
         }
         else
         {
-            Debug.LogWarning("No monsters selected for the encounter.");
+            Debug.LogWarning("Selected encounter or player party is null");
         }
     }
 

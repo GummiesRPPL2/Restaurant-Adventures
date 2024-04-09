@@ -7951,10 +7951,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   areaEncounterTables:
-  - areaName: 
-    encounterTable: []
-  minNumberOfMonstersToEncounter: 1
-  maxNumberOfMonstersToEncounter: 4
+  - areaName: BerthierryPlains
+    encounterTable:
+    - {fileID: 11400000, guid: 6b76e14bdf15955498d0c041e6f20dd8, type: 2}
+    - {fileID: 11400000, guid: fddc553412666f144955d3adb0a343e0, type: 2}
+    - {fileID: 11400000, guid: 70b8b626cc8a7c646b3ed3ad863453eb, type: 2}
+    - {fileID: 11400000, guid: 900851470208b654e8171111e0f23ba8, type: 2}
+    - {fileID: 11400000, guid: 97d10aa2e9956a44cac655e1c0fc6440, type: 2}
+    - {fileID: 11400000, guid: 0ddd5a5ab0c89da478780a37719c8cbb, type: 2}
+    - {fileID: 11400000, guid: 070ad10517d069f45b8aa61e17843b1a, type: 2}
+    - {fileID: 11400000, guid: fd4a6ccecc2e93443864c99727f4a697, type: 2}
+    - {fileID: 11400000, guid: 23e4a757e0fe3b84a94c83bcb6b4a73a, type: 2}
+    - {fileID: 11400000, guid: eb5d52d92a618184a96eff3d92ffb213, type: 2}
+  playerParty: {fileID: 11400000, guid: 4ded87b0cf3f4134db00bae1c3d4c2c3, type: 2}
 --- !u!4 &1719277531
 Transform:
   m_ObjectHideFlags: 0

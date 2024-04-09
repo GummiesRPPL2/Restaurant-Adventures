@@ -9,15 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a13f89d039b964419d04b179644cc3e, type: 3}
-  m_Name: Wild Pig
+  m_Script: {fileID: 11500000, guid: a59be4f9e4dbe01419b14c6a1ca07959, type: 3}
+  m_Name: Flora
   m_EditorClassIdentifier: 
-  monsterName: Wild Pig
-  sprite: {fileID: -851630847, guid: 96efa2435d000154088473fca716d673, type: 3}
-  health: 15
-  attack: 6
-  magic: 2
-  defense: 4
-  resistance: 3
-  speed: 7
-  skills: []
+  characterName: Flora
+  maxHealth: 15
+  attack: 7
+  defense: 8
+  magic: 3
+  resistance: 7
+  speed: 5

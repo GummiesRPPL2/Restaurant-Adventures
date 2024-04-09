@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a13f89d039b964419d04b179644cc3e, type: 3}
-  m_Name: Wild Pig
+  m_Name: WildBird
   m_EditorClassIdentifier: 
-  monsterName: Wild Pig
-  sprite: {fileID: -851630847, guid: 96efa2435d000154088473fca716d673, type: 3}
-  health: 15
-  attack: 6
-  magic: 2
-  defense: 4
+  monsterName: Wild Bird
+  sprite: {fileID: 722550439, guid: 96efa2435d000154088473fca716d673, type: 3}
+  health: 12
+  attack: 7
+  magic: 4
+  defense: 3
   resistance: 3
-  speed: 7
+  speed: 9
   skills: []
