@@ -1,6 +1,6 @@
 ## Restaurant Adventures
-Restaurant Adventures is a short turn based RPG that I am currently developing.
+Restaurant Adventures is a short RPG that I am currently developing.
 
 ## Features
-- Turned based combat
+- 
 - 
